@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cejay B. Alejandro - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-light: #e0e7ff;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --light-gray: #f1f5f9;
+      --white: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light-gray);
+      color: var(--dark);
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .resume {
+      background: var(--white);
+      max-width: 900px;
+      width: 100%;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+    
+    .sidebar {
+      background: linear-gradient(135deg, var(--primary), #3a0ca3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      color: white;
+    }
+    
+    .main-content {
+      padding: 0.5rem;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin: 0 auto 1.5rem;
+      display: block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+      text-align: center;
+    }
+    
+    .title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--primary-light);
+      text-align: center;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1rem;
+      color: white;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary-light);
+      border-radius: 3px;
+    }
+    
+    .main-content h2 {
+      color: var(--primary);
+    }
+    
+    .main-content h2::after {
+      background: var(--primary);
+    }
+    
+    .contact-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    
+    .contact-list li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .contact-icon {
+      color: var(--primary-light);
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+    
+    .info-list {
+      list-style: none;
+    }
+    
+    .info-list li {
+      margin-bottom: 0.75rem;
+      position: relative;
+      padding-left: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .info-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    
+    .sidebar .info-list li::before {
+      background: var(--primary-light);
+    }
+    
+    .tag {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+    }
+    
+    .experience {
+      margin-bottom: 1.5rem;
+    }
+    
+    .experience-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    
+    .experience-meta {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .experience-details {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+    
+    .experience-details li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .resume {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+      
+      .sidebar {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <aside class="sidebar">
+      <!-- You can add a profile image here -->
+      <!-- <img src="profile.jpg" alt="Profile Photo" class="profile-img"> -->
+      <h1>Cejay B. Alejandro</h1>
+      <p class="title">ICT Specialist</p>
+      
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+          <span>cejayaledge28@gmail.com</span>
+        </li>
+        <li>
+          <span class="contact-icon"><i class="fas fa-phone"></i></span>
+          <span>0995 023 4552</span>
+        </li>
+        <li>
+          <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+          <span>Unit 223 Mt. Banahaw, Eusebio Bliss III, West Bank Road Floodway, Maybunga, Pasig City</span>
+        </li>
+      </ul>
+      
+      <h2>Personal Info</h2>
+      <ul class="info-list">
+        <li><strong>Age:</strong> 20</li>
+        <li><strong>Date of Birth:</strong> 2005</li>
+        <li><strong>Weight:</strong> 75 kg</li>
+        <li><strong>Languages:</strong> English, Filipino</li>
+      </ul>
+      
+      <h2>Skills</h2>
+      <div>
+        <span class="tag">Computer Troubleshooting</span>
+        <span class="tag">System Servicing</span>
+        <span class="tag">Windows Installation</span>
+        <span class="tag">Microsoft Office</span>
+        <span class="tag">Record Keeping</span>
+        <span class="tag">Online Communication</span>
+      </div>
+      
+      <h2>Certifications</h2>
+      <ul class="info-list">
+        <li>NC II – Computer System Servicing</li>
+      </ul>
+    </aside>
+    
+    <main class="main-content">
+      <section>
+        <h2>Professional Summary</h2>
+        <p>ICT professional with certification in Computer System Servicing and experience in technical support and administrative assistance. Skilled in computer troubleshooting, system maintenance, and client coordination. Seeking to leverage technical expertise and organizational skills in an IT support role.</p>
+      </section>
+      
+      <section>
+        <h2>Work Experience</h2>
+        <div class="experience">
+          <div class="experience-title">Personal Assistant – Pasabuy Service</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-briefcase"></i> Freelance</span>
+            <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+            <span><i class="fas fa-calendar-alt"></i> 2023</span>
+          </div>
+          <ul class="experience-details">
+            <li>Created and maintained lists of buyers, contact information, and item requests</li>
+            <li>Tracked and recorded all items ordered from Japan</li>
+            <li>Calculated expenses including item costs and shipping fees</li>
+            <li>Facilitated clear communication between vlogger and buyers</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section>
+
+        <h2>Education</h2>
+        <div class="experience">
+          <div class="experience-title">ICCT College – Rizal City</div>
+          <div class="experience-meta">
+            <span>Senior High School</span>
+            <span><i class="fas fa-calendar-alt"></i> 2026–2027</span>
+          </div>
+        </div>
+
+        <div class="experience">
+          <div class="experience-title">Sta. Lucia High School – Pasig City</div>
+          <div class="experience-meta">
+            <span>Senior High School</span>
+            <span><i class="fas fa-calendar-alt"></i> 2023–2024</span>
+          </div>
+        </div>
+        
+        <div class="experience">
+          <div class="experience-title">Sta. Lucia High School – Pasig City</div>
+          <div class="experience-meta">
+            <span>Junior High School</span>
+            <span><i class="fas fa-calendar-alt"></i> 2020–2021</span>
+          </div>
+        </div>
+        
+        <div class="experience">
+          <div class="experience-title">De Castro Elementary School – Pasig City</div>
+          <div class="experience-meta">
+            <span>Elementary</span>
+            <span><i class="fas fa-calendar-alt"></i> 2016–2017</span>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Technical Proficiencies</h2>
+        <ul class="info-list">
+          <li>Proficient in Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+          <li>Experienced in computer hardware troubleshooting and repair</li>
+          <li>Skilled in Windows OS installation and error resolution</li>
+          <li>Knowledgeable in maintaining organized records and documentation</li>
+          <li>Effective in online communication and remote coordination</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
