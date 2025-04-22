@@ -10,10 +10,14 @@
     :root {
       --primary: #4361ee;
       --primary-light: #e0e7ff;
+      --secondary: #f72585;
+      --accent: #4cc9f0;
       --dark: #1e293b;
       --gray: #64748b;
-      --light-gray: #f1f5f9;
+      --light-gray: #f8fafc;
       --white: #ffffff;
+      --gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+      --gradient-accent: linear-gradient(135deg, #f72585, #b5179e);
     }
     
     * {
@@ -36,60 +40,81 @@
       background: var(--white);
       max-width: 900px;
       width: 100%;
-      padding: 3rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 0;
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 2rem;
+      gap: 0;
+      overflow: hidden;
     }
     
     .sidebar {
-      background: linear-gradient(135deg, var(--primary), #3a0ca3);
-      padding: 2rem;
-      border-radius: 0.75rem;
+      background: var(--gradient);
+      padding: 2.5rem 2rem;
       color: white;
+      position: relative;
+    }
+    
+    .sidebar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd' opacity='0.1'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     .main-content {
-      padding: 0.5rem;
+      padding: 2.5rem;
     }
     
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white;
+      border: 5px solid rgba(255,255,255,0.2);
       margin: 0 auto 1.5rem;
       display: block;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
     }
     
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       color: white;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     
     .title {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 400;
       color: var(--primary-light);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       opacity: 0.9;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.5px;
     }
     
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin: 1.5rem 0 1rem;
+      margin: 2rem 0 1.25rem;
       color: white;
       position: relative;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
     }
     
     h2::after {
@@ -97,9 +122,9 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--primary-light);
+      width: 50px;
+      height: 4px;
+      background: var(--accent);
       border-radius: 3px;
     }
     
@@ -108,103 +133,230 @@
     }
     
     .main-content h2::after {
-      background: var(--primary);
+      background: var(--gradient-accent);
     }
     
     .contact-list {
       list-style: none;
       margin-top: 1rem;
+      position: relative;
+      z-index: 1;
     }
     
     .contact-list li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
+      line-height: 1.5;
     }
     
     .contact-icon {
-      color: var(--primary-light);
-      font-size: 1rem;
-      margin-top: 2px;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-top: 3px;
+      flex-shrink: 0;
     }
     
     .info-list {
       list-style: none;
+      position: relative;
+      z-index: 1;
     }
     
     .info-list li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       position: relative;
-      padding-left: 1.5rem;
-      line-height: 1.5;
+      padding-left: 1.75rem;
+      line-height: 1.6;
     }
     
     .info-list li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.5rem;
-      width: 8px;
-      height: 8px;
-      background: var(--primary);
+      top: 0.6rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
       border-radius: 50%;
     }
     
     .sidebar .info-list li::before {
-      background: var(--primary-light);
+      background: var(--accent);
     }
     
     .tag {
       display: inline-block;
-      background: var(--primary-light);
-      color: var(--primary);
-      padding: 0.25rem 0.75rem;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 0.35rem 1rem;
       border-radius: 50px;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 500;
       margin: 0.25rem 0.25rem 0.25rem 0;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
     }
     
     .experience {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--primary-light);
+    }
+    
+    .experience:last-child {
+      margin-bottom: 0;
     }
     
     .experience-title {
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.15rem;
       color: var(--dark);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
+      position: relative;
     }
     
     .experience-meta {
       color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .experience-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .experience-meta i {
+      color: var(--primary);
+      font-size: 0.9rem;
     }
     
     .experience-details {
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
       padding-left: 1rem;
     }
     
     .experience-details li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .experience-details li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+    
+    section {
+      margin-bottom: 2.5rem;
+    }
+    
+    section:last-child {
+      margin-bottom: 0;
+    }
+    
+    section p {
+      line-height: 1.7;
+      color: var(--gray);
+    }
+    
+    .main-content .info-list li::before {
+      background: var(--secondary);
+    }
+    
+    .main-content .info-list li {
+      color: var(--gray);
+    }
+    
+    .main-content .info-list strong {
+      color: var(--dark);
     }
     
     @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
       .resume {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
       }
       
       .sidebar {
-        order: -1;
+        padding: 2rem 1.5rem;
+      }
+      
+      .main-content {
+        padding: 2rem 1.5rem;
       }
     }
+    
+    /* Modern scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--light-gray);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary);
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .resume {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    section {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+    
+    .sidebar > * {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    /* Create staggered animation delays */
+    .sidebar h2:nth-child(1) { animation-delay: 0.4s; }
+    .sidebar h2:nth-child(2) { animation-delay: 0.5s; }
+    .sidebar h2:nth-child(3) { animation-delay: 0.6s; }
+    .sidebar h2:nth-child(4) { animation-delay: 0.7s; }
+    
+    section:nth-child(1) { animation-delay: 0.4s; }
+    section:nth-child(2) { animation-delay: 0.5s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.7s; }
   </style>
 </head>
 <body>
@@ -280,12 +432,11 @@
       </section>
       
       <section>
-
         <h2>Education</h2>
         <div class="experience">
           <div class="experience-title">ICCT College – Rizal City</div>
           <div class="experience-meta">
-            <span>Senior High School</span>
+            <span><i class="fas fa-graduation-cap"></i> Senior High School</span>
             <span><i class="fas fa-calendar-alt"></i> 2026–2027</span>
           </div>
         </div>
@@ -293,7 +444,7 @@
         <div class="experience">
           <div class="experience-title">Sta. Lucia High School – Pasig City</div>
           <div class="experience-meta">
-            <span>Senior High School</span>
+            <span><i class="fas fa-graduation-cap"></i> Senior High School</span>
             <span><i class="fas fa-calendar-alt"></i> 2023–2024</span>
           </div>
         </div>
@@ -301,7 +452,7 @@
         <div class="experience">
           <div class="experience-title">Sta. Lucia High School – Pasig City</div>
           <div class="experience-meta">
-            <span>Junior High School</span>
+            <span><i class="fas fa-graduation-cap"></i> Junior High School</span>
             <span><i class="fas fa-calendar-alt"></i> 2020–2021</span>
           </div>
         </div>
@@ -309,7 +460,7 @@
         <div class="experience">
           <div class="experience-title">De Castro Elementary School – Pasig City</div>
           <div class="experience-meta">
-            <span>Elementary</span>
+            <span><i class="fas fa-graduation-cap"></i> Elementary</span>
             <span><i class="fas fa-calendar-alt"></i> 2016–2017</span>
           </div>
         </div>
